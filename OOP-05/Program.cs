@@ -23,6 +23,15 @@
             */
             #endregion
 
+            #region Ques 3
+            /*
+             a - A static field belongs to the class itself, not to any particular object — there is exactly one copy of it, shared across every instance. An instance field exists separately in every object; each object has its own value.
+             b - A static method also belongs to the class, not an object — it's called without creating an instance. No, it cannot directly access instance fields/methods, because there's no this object to work with; it would need an object reference passed in explicitly.
+             c - A special constructor with no parameters and no access modifier, used to initialize static members. It runs automatically, exactly once, the first time the class is used — either when the first instance is created or when any static member is accessed for the first time. It can never be called manually.
+             d - A class marked static — it can only contain static members and cannot be instantiated. You cannot write
+            */
+            #endregion
+
 
         }
     }
