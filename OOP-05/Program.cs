@@ -13,6 +13,16 @@
 
             #endregion
 
+            #region Ques 2
+            /* 
+             a - A copy where a new outer object is created, but any reference-type members inside it still point to the same inner objects as the original. MemberwiseClone() does this: value-type fields get duplicated, but reference-type fields just copy the reference.
+             b - A copy where the new object gets its own independent copies of every reference-type member too — nothing is shared with the original at any level
+             c - They stay shared. Both the original and the copy point to the exact same instance. Changing that member through one variable is visible through the other.
+             d - They get cloned into new, independent instances. Changing the copy's version has no effect on the original's version.
+             e - Undo/history systems, or any case where you need to modify a copy of an object for a "what-if" scenario without risking corrupting the live/original data — a Shallow Copy would silently mutate the original through the shared reference, which is a dangerous, hard-to-debug bug.
+            */
+            #endregion
+
 
         }
     }
