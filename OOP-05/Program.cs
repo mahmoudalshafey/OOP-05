@@ -50,6 +50,57 @@
             */
             #endregion
 
+            Console.WriteLine("Smart Delivery Management System");
+
+            Console.WriteLine("Creating Shipments...");
+            StandardShipment sh1 = new StandardShipment("SH001", "Books", 3m, 50m, new DeliveryAddress("Cairo", "Tahrir St", 10));
+            ExpressShipment sh2 = new ExpressShipment("SH002", "Electronics", 2m, 60m, new DeliveryAddress("Cairo", "Naser St", 5), 20m);
+            InternationalShipment sh3 = new InternationalShipment("SH003", "Documents", 8m, 100m, new DeliveryAddress("Cairo", "Giza St", 12), "USA", 150m);
+
+            Console.WriteLine($"Total Shipments Created: {Shipment.GetTotalShipmentsCreated()}");
+
+            Console.WriteLine("Object Copying");
+            Shipment assignedShipment = sh1;
+            Console.WriteLine($"Original Shipment : {sh1.TrackingCode}");
+            Console.WriteLine($"Assigned Shipment : {assignedShipment.TrackingCode}");
+            Console.WriteLine($"Same Object: {object.ReferenceEquals(sh1, assignedShipment)}");
+
+            Console.WriteLine("Shallow Copy");
+            Shipment shallowCopied = sh1.ShallowCopy();
+            Console.WriteLine($"Original Shipment Address: {sh1.Destination.City}");
+            Console.WriteLine($"Copied Shipment Address  : {shallowCopied.Destination.City}");
+
+            Console.WriteLine("\nChanging copied shipment address...");
+            shallowCopied.Destination.City = "Giza";
+
+            Console.WriteLine($"Original Shipment Address: {sh1.Destination.City}");
+            Console.WriteLine($"Copied Shipment Address  : {shallowCopied.Destination.City}");
+            Console.WriteLine($"Same DeliveryAddress Object: {object.ReferenceEquals(sh1.Destination, shallowCopied.Destination)}");
+            Console.WriteLine("==========================================");
+
+            sh1.Destination.City = "Cairo";
+
+            Console.WriteLine("Deep Copy");
+            Shipment deepCopied = sh1.DeepCopy();
+            Console.WriteLine($"Original Shipment Address: {sh1.Destination.City}");
+            Console.WriteLine($"Copied Shipment Address  : {deepCopied.Destination.City}");
+
+            Console.WriteLine("\nChanging copied shipment address...");
+            deepCopied.Destination.City = "Giza";
+
+            Console.WriteLine($"Original Shipment Address: {sh1.Destination.City}");
+            Console.WriteLine($"Copied Shipment Address  : {deepCopied.Destination.City}");
+            Console.WriteLine($"Same DeliveryAddress Object: {object.ReferenceEquals(sh1.Destination, deepCopied.Destination)}");
+            Console.WriteLine("==========================================");
+
+            Console.WriteLine("Tracking Status Check");
+            Console.WriteLine(sh1.GetTrackingStatus());
+            Console.WriteLine(sh2.GetTrackingStatus());
+            Console.WriteLine(sh3.GetTrackingStatus());
+            Console.WriteLine("==========================================");
+
+            Console.WriteLine($"Total Shipments Created: {Shipment.GetTotalShipmentsCreated()}");
+
         }
     }
 }

@@ -6,7 +6,6 @@ namespace OOP_05
 {
     internal class StandardShipment : Shipment, ITrackable, IInsurable
     {
-        // Constructor chaining: no extra members, just forwards to Shipment's base(...).
         public StandardShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
             : base(trackingCode, description, weight, deliveryFee, destination)
         {
