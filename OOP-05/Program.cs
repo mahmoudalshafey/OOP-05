@@ -41,6 +41,14 @@
             */
             #endregion
 
+            #region Ques 5
+            /*
+            a -  A class whose definition is split across two or more files using the partial keyword. At compile time, the compiler merges all the parts back into a single class.
+            b - To organize large classes by responsibility , make it easier for multiple developers to work on the same class without conflicts, and keep each file focused and readable.
+            c - A method declared in one part of a partial class that can optionally be implemented in another part of the same class.
+            d - The compiler simply removes it entirely — both the declaration and every call to it are erased at compile time, with zero runtime cost. It never causes an error, unlike calling an undefined regular method.
+            */
+            #endregion
 
         }
     }
