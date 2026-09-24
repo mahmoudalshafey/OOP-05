@@ -11,6 +11,9 @@ namespace OOP_05
         private decimal _weight;
         private decimal _deliveryFee;
 
+        private static int _totalShipmentsCreated;
+
+
         public string TrackingCode
         {
             get => _trackingCode;
@@ -58,6 +61,15 @@ namespace OOP_05
             DeliveryFee = deliveryFee;
             Destination = destination;
         }
+
+        static Shipment()
+        {
+            _totalShipmentsCreated = 0;
+            Console.WriteLine("Shipment System Initialized");
+        }
+
+        public static int GetTotalShipmentsCreated() => _totalShipmentsCreated;
+
 
         public void UpdateDeliveryFee(decimal newFee)
         {
