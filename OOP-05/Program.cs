@@ -32,6 +32,15 @@
             */
             #endregion
 
+            #region Ques 4
+            /*
+            a - A static method that lets you "add" new functionality to an existing type without modifying its source code or creating a subclass — you call it as if it were an instance method on that type.
+            b - this
+            c - Inside a static class, and the method itself must also be static.
+            d - No. An extension method is just an ordinary static method from the compiler's point of view — it has no special access, so it can only use the public members of the type, exactly like any other outside code.
+            */
+            #endregion
+
 
         }
     }
