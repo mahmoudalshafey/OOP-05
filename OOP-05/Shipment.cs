@@ -79,5 +79,10 @@ namespace OOP_05
         {
             return (Shipment)MemberwiseClone();
         }
+
+        public Shipment ShallowCopy()
+        {
+            return (Shipment)MemberwiseClone();
+        }
     }
 }
