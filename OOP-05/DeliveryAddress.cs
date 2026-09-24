@@ -21,5 +21,10 @@ namespace OOP_05
         {
             return $"{BuildingNumber} {Street}, {City}";
         }
+
+        public DeliveryAddress Clone()
+        {
+            return new DeliveryAddress(City, Street, BuildingNumber);
+        }
     }
 }

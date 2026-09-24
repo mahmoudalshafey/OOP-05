@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OOP_05
 {
-    internal abstract class Shipment
+    internal abstract class Shipment 
     {
         private string _trackingCode;
         private string _description;
@@ -83,6 +83,12 @@ namespace OOP_05
         public Shipment ShallowCopy()
         {
             return (Shipment)MemberwiseClone();
+        }
+        public Shipment DeepCopy()
+        {
+            Shipment clone = (Shipment)MemberwiseClone();
+            clone.Destination = Destination.Clone();
+            return clone;
         }
     }
 }
